@@ -1,0 +1,28 @@
+.navbar {
+  background-color: gray;
+}
+
+.navbar a:hover {
+  color: orange;
+}
+
+.current-nav {
+  text-decoration: underline;
+  color: orange;
+}
+
+#navbarNav {
+  justify-content: end;
+}
+
+.navbar-brand {
+  padding-left: 30px;
+}
+
+.navbar-nav {
+  padding-right: 30px;
+}
+
+.navbar-collapse {
+  padding-left: 30px;
+}

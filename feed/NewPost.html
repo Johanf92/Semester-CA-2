@@ -15,9 +15,9 @@
 
   <body>
     <div class="footer_alignment">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/feed/">Semester Project 2</a>
+          <a class="navbar-brand" href="/profile/">Noroff - CA - JS2</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -48,28 +48,59 @@
       </nav>
 
       <main>
-        <div class="container mt-5">
-          <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mb-4">
-              <div class="card auction-card">
-                <img
-                  src="https://images.pexels.com/photos/6077422/pexels-photo-6077422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  ;
-                  class="card-img-top"
-                  alt="Auction Item"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Auction Item Title</h5>
-                  <p class="card-text">
-                    This is a short description of the auction item.
-                  </p>
-                  <a href="#" class="btn btn_card btn-primary">Bid Now</a>
-                  <a href="#" class="read-more-link">Read More</a>
-                </div>
-              </div>
+        <div class="container">
+          <h1 class="text-center mt-5">Create new post</h1>
+          <form id="createPostForm">
+            <div id="message"></div>
+            <div class="mb-3">
+              <input name="id" type="hidden" />
+              <label for="title" class="form-label">title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="post-title"
+                placeholder="Enter post content"
+                name="title"
+                required
+              />
             </div>
-            <!-- Repeat the above card for more auction items -->
-          </div>
+            <div class="mb-3">
+              <label for="post-body" class="form-label">Post content</label>
+              <textarea
+                class="form-control"
+                id="post-body"
+                rows="3"
+                placeholder="Enter post body"
+                name="body"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="image-url" class="form-label">Image URL</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image-url"
+                placeholder="Enter image URL"
+                name="media"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="post-tags" class="form-label">Tags</label>
+              <input
+                type="text"
+                class="form-control"
+                id="post-tags"
+                placeholder="Enter tags separated by commas"
+                name="tags"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-success mb-3">
+              Create post
+            </button>
+          </form>
         </div>
       </main>
 
