@@ -22,13 +22,19 @@
                     </div>
                     <div class="col-md-6 right">      
                         <div class="input-box">
+
+                          <form id="loginForm">
                            <h1 class="text-center mb-4">Welcome</h1>
+
+                           <div id="message"></div>
+
+                           <fieldset>
                            <div class="input-field">
-                                <input type="text" class="input" id="email" required="" autocomplete="off">
+                                <input type="text" class="input" id="email" required="" autocomplete="off" name="email">
                                 <label for="email">E-mail</label> 
                             </div> 
                            <div class="input-field">
-                                <input type="password" class="input" id="pass" required="">
+                                <input type="password" class="input" id="pass" required="" name="password">
                                 <label for="pass">Password</label>
                             </div> 
                            <div class="input-field">
@@ -37,6 +43,8 @@
                            </div> 
                            <div class="signin">
                             <span>Join the auction community: <br> <a href="/register/index.html">Create account here</a></span>
+                          </fieldset>
+                          </form>
                            </div>
                         </div>  
                     </div>
