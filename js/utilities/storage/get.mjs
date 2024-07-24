@@ -3,7 +3,7 @@ export function get(key) {
   console.log(`Getting ${key}:`, item); // Debugging log
   try {
     return JSON.parse(item);
-  } catch (e) {
+  } catch {
     return item;
   }
 }
