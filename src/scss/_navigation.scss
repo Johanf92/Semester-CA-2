@@ -1,28 +1,59 @@
+// src/scss/_navigation.scss
+
 .navbar {
   background-color: gray;
-}
 
-.navbar a:hover {
-  color: orange;
-}
+  a:hover {
+    color: orange;
+  }
 
-.current-nav {
-  text-decoration: underline;
-  color: orange;
-}
+  .current-nav {
+    text-decoration: underline;
+    color: orange;
+  }
 
-#navbarNav {
-  justify-content: end;
-}
+  .navbar-brand {
+    margin-left: 10rem;
+  }
 
-.navbar-brand {
-  padding-left: 30px;
-}
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
 
-.navbar-nav {
-  padding-right: 30px;
-}
+    .nav-link {
+      margin: 0 1rem;
+    }
 
-.navbar-collapse {
-  padding-left: 30px;
+    .nav-item.d-lg-none {
+      display: none;
+      @media (max-width: 992px) {
+        display: block;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding-left: 30px;
+    justify-content: end;
+  }
+
+  .icons {
+    margin-right: 10rem; // Adds whitespace after the icons
+
+    a {
+      color: #000;
+      font-size: 1.5rem;
+      margin-left: 1rem;
+
+      &:hover {
+        color: #f5cb42; // Change this to your desired hover color
+      }
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
 }

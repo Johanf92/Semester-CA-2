@@ -5,47 +5,36 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .card-body {
-    text-align: center;
+  .bid_btn {
+    background-color: rgb(225, 181, 97);
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .card-title {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-text {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .bid_btn {
-      background-color: rgb(225, 181, 97);
-      border: none;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .read-more-link {
-      display: block;
-      font-size: 0.875rem;
-      color: $primary-color;
-      text-decoration: none;
-      margin-top: 0.5rem;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  .read-more-link {
+    display: block;
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
   }
 }
