@@ -14,7 +14,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <title>Auction Feed</title>
+    <title>Profile</title>
   </head>
 
   <body>
@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item current-nav">
-                <a class="nav-link active" href="/profile/">Auctions</a>
+                <a class="nav-link active" href="/feed/index.html">Auctions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/feed/">Bid</a>
@@ -71,37 +71,45 @@
       </nav>
 
       <main>
-       <!--  <div class="container mt-5">
-          <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mb-4">
-              <div class="card auction-card">
-                <img
-                  src="https://images.pexels.com/photos/6077422/pexels-photo-6077422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  ;
-                  class="card-img-top"
-                  alt="Auction Item"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Auction Item Title</h5>
-                  <p class="card-text">
-                    This is a short description of the auction item.
-                  </p>
-                  <a href="#" class="btn btn_card btn-primary">Bid Now</a>
-                  <a href="#" class="read-more-link">Read More</a>
-                </div>
+
+        <h1 class="text-center mt-5 mb-5">profile</h1>
+
+        <div class="container">
+            <div class="profile-container mt-2 mx-auto">
+          <div class="col-md-4 text-center">
+            <img
+              src="https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Profile Picture"
+              class="rounded-circle profile-picture"
+            />
+            <div>
+                <a href="index.html" class="">Edit +</a>
+            </div>
+           
+          </div>
+          <div class="col-md-4">
+            <div class="personal-info">
+              <h3>John Doe</h3>
+              <p>Email: john.doe@example.com</p>
+              <p>Phone: (123) 456-7890</p>
+              <div class="profile-credits mt-3">
+                <i class="fas fa-star"></i> <span id="credits">0</span> Credits
               </div>
             </div>
-
+            <div class="social-media mt-3">
+              <a href="#" class="text-dark mr-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-dark mr-2"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+            </div>
           </div>
-        </div> -->
+        </div>
 
-        <div class ="container text-center">
-          <h2 class="text-center mb-4 mt-4">Listings</h2>
-        <a href="/feed/newPost.html" class="btn btn-warning this_button mb-3">
-          Click here to create a Auction
-        </a>
-        
-       
+        <hr class="mb-5">
+
         <div id="listings" class="loading">
           <div class="loader"></div>
         </div>

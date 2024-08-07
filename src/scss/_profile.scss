@@ -1,0 +1,45 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  .profile-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .profile-credits {
+    font-size: 1.2rem;
+    color: #555;
+
+    i {
+      color: #ff9800;
+    }
+  }
+
+  .personal-info {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+  }
+
+  .social-media {
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}

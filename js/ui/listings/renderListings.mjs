@@ -9,11 +9,15 @@ export function renderListings(parent, listings) {
 
   container.innerHTML = "";
 
+  const cardGroup = document.createElement("div");
+  cardGroup.classList.add("card-group");
+
   const listingsHtml = listings.map((listing) => {
     return createListing(listing);
   });
 
-  container.append(...listingsHtml);
+  cardGroup.append(...listingsHtml);
+  container.appendChild(cardGroup);
 }
 
 /**
@@ -23,34 +27,52 @@ export function renderListings(parent, listings) {
  */
 
 function createListing(listing) {
-  const { id, title: heading, body, media, tags } = listing;
+  const { id, title: heading, description: body, media, tags } = listing;
 
   const card = document.createElement("div");
-  card.classList.add("card", "mt-3", "text-center");
+  card.classList.add("card");
+
+  const img = document.createElement("img");
+  if (media && media.length > 0) {
+    img.src = media[0].url;
+    img.alt = media[0].alt || heading;
+  } else {
+    img.src = ""; // Provide a default or placeholder image URL
+    img.alt = "No image available";
+  }
+  img.classList.add("card-img-top");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  const title = document.createElement("h3");
-  title.classList.add("card-title", "mt-3");
+  const title = document.createElement("h5");
+  title.classList.add("card-title");
   title.textContent = heading;
 
   const bodyParagraph = document.createElement("p");
-  bodyParagraph.classList.add("card-text", "mt-5", "mb-5");
+  bodyParagraph.classList.add("card-text");
   bodyParagraph.textContent = body;
 
-  const img = document.createElement("img");
-  img.src = media;
-  img.classList.add("card-img-top");
-
   const tagsDiv = document.createElement("div");
-  tagsDiv.classList.add("tags", "card-body");
+  tagsDiv.classList.add("tags");
 
   const tagsContent = tags.join(", ");
   const tagsLabel = document.createElement("span");
   tagsLabel.textContent = `Tags: ${tagsContent}`;
 
   tagsDiv.appendChild(tagsLabel);
+
+  cardBody.appendChild(title);
+  cardBody.appendChild(bodyParagraph);
+  cardBody.appendChild(tagsDiv);
+
+  const cardFooter = document.createElement("div");
+  cardFooter.classList.add("card-footer");
+
+  const smallText = document.createElement("small");
+  smallText.classList.add("text-muted");
+
+  cardFooter.appendChild(smallText);
 
   const button = document.createElement("button");
   button.textContent = "Read more...";
@@ -60,11 +82,11 @@ function createListing(listing) {
     window.location.href = `/post/index.html?id=${id}`;
   });
 
-  card.appendChild(title);
+  cardFooter.appendChild(button);
+
   card.appendChild(img);
-  card.appendChild(bodyParagraph);
-  card.appendChild(tagsDiv);
-  card.appendChild(button);
+  card.appendChild(cardBody);
+  card.appendChild(cardFooter);
 
   return card;
 }
