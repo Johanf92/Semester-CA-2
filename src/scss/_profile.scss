@@ -1,6 +1,13 @@
+.custom-hr {
+  width: 70%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+}
+
 .profile-container {
   display: flex;
   justify-content: center;
+  text-align: center;
 
   margin-bottom: 30px;
 
