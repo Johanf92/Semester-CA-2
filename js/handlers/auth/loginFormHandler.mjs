@@ -1,6 +1,7 @@
 import { login } from "../../api/auth/login.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import * as utilities from "../../utilities/storage/index.mjs";
+import { createApiKey } from "../../api/auth/createApiKey.mjs";
 
 /**
  * Attaches the login form submission event handler.
@@ -53,6 +54,10 @@ async function handleLoginForm(event) {
       console.log("Saved User Name:", utilities.get("userName")); // Debugging log
       utilities.save("email", email);
       console.log("Saved Email:", utilities.get("email")); // Debugging log
+
+      // Create and store the API Key
+      const apiKey = await createApiKey(accessToken);
+      console.log("Saved API Key:", apiKey); // Debugging log
 
       window.location.href = "/feed";
     } else {

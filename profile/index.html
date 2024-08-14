@@ -16,7 +16,6 @@
     />
     <title>Profile</title>
   </head>
-
   <body>
     <div class="footer_alignment">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
@@ -44,9 +43,7 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/feed/">Sell</a>
               </li>
-              <li class="nav-item">
-                <a class="btn" id="logoutBtn">Logout</a>
-              </li>
+              <li class="nav-item"><a class="btn" id="logoutBtn">Logout</a></li>
               <!-- Icons for smaller screens -->
               <li class="nav-item d-lg-none">
                 <a class="nav-link" href="/profile/"
@@ -71,48 +68,56 @@
       </nav>
 
       <main>
-
-        <h1 class="text-center mt-5 mb-5">profile</h1>
-        <hr class="custom-hr mb-5">
+        <h2 class="text-center mt-5 mb-5">Profile</h2>
+        <hr class="custom-hr mb-5" />
 
         <div class="container">
-            <div class="profile-container mt-2 mx-auto">
-          <div class="col-md-4 text-center">
-            <img
-              src="https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Profile Picture"
-              class="rounded-circle profile-picture"
-            />
-            <div>
-                <a href="index.html" class="">Edit +</a>
-            </div>
-           
-          </div>
-          <div class="col-md-4">
-            <div class="personal-info">
-              <h3>John Doe</h3>
-              <p>Email: john.doe@example.com</p>
-              <p>Phone: (123) 456-7890</p>
-              <div class="profile-credits mt-3">
-                <i class="fa-regular fa-credit-card"></i> <span id="credits">0</span> Credits
+          <div class="profile-container mt-2 mx-auto">
+            <div class="col-md-4 text-center">
+              <img
+                id="profile-picture"
+                src="https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Profile Picture"
+                class="rounded-circle profile-picture"
+              />
+              <div>
+                <a href="/profile/editProfilePic.html" class=""
+                  >Edit<i class="fa-regular fa-pen-to-square"></i
+                ></a>
               </div>
             </div>
-            <div class="social-media mt-3">
-              <a href="#" class="text-dark mr-2"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="text-dark mr-2"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+            <div class="col-md-4">
+              <div class="personal-info">
+                <h4 id="">
+                  Name: <span id="profile-username">John Doe </span>
+                </h4>
+                <p>
+                  Email: <span id="profile-email">john.doe@example.com</span>
+                </p>
+                <div class="profile-credits mt-3">
+                  <i class="fa-regular fa-credit-card"></i>
+                  <span id="credits">0</span> Credits
+                </div>
+              </div>
+              <div class="social-media mt-3">
+                <a href="#" class="text-dark mr-2"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="text-dark mr-2"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr class="custom-hr">
+          <hr class="custom-hr" />
 
-        <div id="listings" class="loading">
-          <div class="loader"></div>
+          <h3 class="text-center mt-5">My listings:</h3>
+
+          <div id="profile_listings" class="loading">
+            <div class="loader"></div>
+          </div>
         </div>
       </main>
 
