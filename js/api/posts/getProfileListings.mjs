@@ -7,7 +7,6 @@ import { listings_URL, profileURL } from "../../constants/constants.mjs";
  */
 export async function getUserListings(userName) {
   const token = localStorage.getItem("token");
-  /*const userName = localStorage.getItem("userName");*/
   const apiKey = localStorage.getItem("apiKey");
   if (!token) {
     throw new Error("User is not authenticated");
@@ -22,7 +21,8 @@ export async function getUserListings(userName) {
   };
 
   try {
-    const response = await fetch(listings_URL, options);
+    //const response = await fetch(profileURL, options);
+    const response = await fetch(`${profileURL}${userName}`, options);
     const json = await response.json();
 
     if (!response.ok) {
