@@ -79,7 +79,7 @@ function createListing(listing) {
   button.classList.add("btn", "btn-success");
 
   button.addEventListener("click", () => {
-    window.location.href = `/post/index.html?id=${id}`;
+    window.location.href = `/listing/index.html?id=${id}`;
   });
 
   cardFooter.appendChild(button);
