@@ -17,8 +17,13 @@ export async function getSingleListing(id) {
     },
   };
 
-  const response = await fetch(`${listings_URL}/${id}`, options);
+  const response = await fetch(
+    `${listings_URL}/${id}?_seller=true&_bids=true`,
+    options
+  );
   const json = await response.json();
+
+  console.log("API Response:", json); // Debugging output
 
   if (!response.ok) {
     throw new Error(json.errors[0].message);
