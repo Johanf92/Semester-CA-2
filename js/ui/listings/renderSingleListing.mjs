@@ -1,3 +1,6 @@
+import { getBid } from "../../api/posts/getBid.mjs";
+import { placeBid } from "../../handlers/posts/createBidHandler.mjs";
+
 /**
  * Renders a list of posts into a specified parent element.
  */
@@ -24,7 +27,7 @@ export function renderSingleListing(parent, listingData) {
  */
 
 function createListing(listingData) {
-  const listing = listingData.data; // Ensure this is correct
+  const listing = listingData.data;
   const {
     id,
     title: heading,
@@ -33,12 +36,12 @@ function createListing(listingData) {
     tags,
     bids,
     _count,
-    seller, // Extract seller
+    seller,
     endsAt,
   } = listing;
 
-  console.log("Listing Data:", listing); // Debugging output
-  console.log("Seller Data:", seller); // Debugging output
+  console.log("Listing Data:", listing);
+  console.log("Seller Data:", seller);
 
   // Create the main card element
   const card = document.createElement("div");
@@ -219,7 +222,10 @@ function createListing(listingData) {
   bidButton.addEventListener("click", async () => {
     const bidAmount = parseFloat(bidInput.value);
     if (bidAmount && bidAmount > currentBid) {
-      await placeBid(id, bidAmount, currentBidText);
+      await placeBid(id, bidAmount);
+      currentBidText.textContent = `Current Bid: $${bidAmount} | Number of Bids: ${
+        bidCount + 1
+      } | Auction ends on: ${new Date(endsAt).toLocaleString()}`;
     } else {
       alert("Please enter a valid bid amount greater than the current bid.");
     }
