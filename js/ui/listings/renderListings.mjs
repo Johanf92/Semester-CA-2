@@ -75,8 +75,8 @@ function createListing(listing) {
   cardFooter.appendChild(smallText);
 
   const button = document.createElement("button");
-  button.textContent = "Read more...";
-  button.classList.add("btn", "btn-success");
+  button.textContent = "See Auction...";
+  button.classList.add("btn", "btn-primary");
 
   button.addEventListener("click", () => {
     window.location.href = `/listing/index.html?id=${id}`;

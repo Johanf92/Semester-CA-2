@@ -21,17 +21,18 @@ export async function getUserListings(userName) {
   };
 
   try {
-    //const response = await fetch(profileURL, options);
-    const response = await fetch(`${profileURL}${userName}`, options);
+    // Update the URL to the correct endpoint for fetching listings
+    const response = await fetch(`${listings_URL}?user=${userName}`, options);
     const json = await response.json();
 
     if (!response.ok) {
       throw new Error(json.errors[0].message);
     }
 
-    return json;
+    // Assuming the listings are in an array under a key called `data`
+    return json.data || [];
   } catch (error) {
-    console.error(" Error fetching posts", error);
+    console.error("Error fetching listings:", error);
     throw error;
   }
 }

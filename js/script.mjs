@@ -5,6 +5,7 @@ import { displayListingsHandler } from "./handlers/posts/displayListingsHandler.
 import { displayAvatarHandler } from "./handlers/posts/displayAvatarHandler.mjs";
 import { displayProfileHandler } from "./handlers/posts/displayProfileHandler.mjs";
 import { displaySingleListingHandler } from "./handlers/posts/displaySingleListingHandler.mjs";
+import { createListingHandler } from "./handlers/posts/createListingHandler.mjs";
 
 function router() {
   const pathname = window.location.pathname;
@@ -35,11 +36,15 @@ function router() {
       console.log("SingleListingPage");
       break;
     case "/profile/":
-    case "profile/index.html":
+    case "/profile/index.html":
       logoutHandler();
       displayProfileHandler();
       displayAvatarHandler();
       console.log("this is the profile page");
+      break;
+    case "/feed/createListing.html":
+      createListingHandler();
+      console.log("create listing page");
       break;
   }
 }
