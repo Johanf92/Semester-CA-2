@@ -1,0 +1,5 @@
+.carousel-image {
+  max-height: 500px; // Adjust this value as needed
+  max-width: 100%; // This keeps the image responsive within its container
+  object-fit: cover; // Ensures the image covers the container while maintaining aspect ratio
+}

@@ -1,0 +1,25 @@
+.landingPage-banner {
+  background-image: url("https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover; /* Ensures the image covers the entire banner */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: white; /* Ensures text is readable against the background */
+  padding: 100px 0; /* Adjust padding to create space for the content */
+  text-align: center; /* Centers text horizontally within the banner */
+}
+
+.landingPage-content {
+  z-index: 1; /* Ensures content is above the background image */
+}
+
+.landingPage-content {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.662
+  ); /* Black background with 50% opacity */
+  padding: 20px; /* Adds padding around the content */
+  border-radius: 8px; /* Optional: rounds the corners */
+  z-index: 1; /* Ensures the content is above the background */
+}
