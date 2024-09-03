@@ -37,10 +37,11 @@ function createListing(listing) {
     img.src = media[0].url;
     img.alt = media[0].alt || heading;
   } else {
-    img.src = ""; // Provide a default or placeholder image URL
+    img.src =
+      "https://images.pexels.com/photos/3683053/pexels-photo-3683053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"; // Provide a default or placeholder image URL
     img.alt = "No image available";
   }
-  img.classList.add("card-img-top");
+  img.classList.add("card-img-top", "img-fluid");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
@@ -75,8 +76,8 @@ function createListing(listing) {
   cardFooter.appendChild(smallText);
 
   const button = document.createElement("button");
-  button.textContent = "See Auction...";
-  button.classList.add("btn", "btn-primary");
+  button.textContent = "Discover More";
+  button.classList.add("btn", "submit", "btn-lg");
 
   button.addEventListener("click", () => {
     window.location.href = `/listing/index.html?id=${id}`;

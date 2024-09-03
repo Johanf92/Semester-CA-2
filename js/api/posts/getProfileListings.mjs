@@ -5,34 +5,36 @@ import { listings_URL, profileURL } from "../../constants/constants.mjs";
  * @param {string} userName - The username whose listings you want to retrieve.
  * @returns {Promise<Array>} - The user's listings.
  */
+// Fetch user's listings based on their username
 export async function getUserListings(userName) {
-  const token = localStorage.getItem("token");
-  const apiKey = localStorage.getItem("apiKey");
-  if (!token) {
-    throw new Error("User is not authenticated");
-  }
-
-  const options = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-      "X-Noroff-API-Key": apiKey,
-    },
-  };
-
   try {
-    // Update the URL to the correct endpoint for fetching listings
-    const response = await fetch(`${listings_URL}?user=${userName}`, options);
-    const json = await response.json();
+    const token = localStorage.getItem("token");
+    const apiKey = localStorage.getItem("apiKey");
+
+    const response = await fetch(`${profileURL}/${userName}/listings`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        "X-Noroff-API-Key": apiKey,
+      },
+    });
 
     if (!response.ok) {
-      throw new Error(json.errors[0].message);
+      throw new Error(
+        `Failed to fetch user listings: ${response.status} ${response.statusText}`
+      );
     }
 
-    // Assuming the listings are in an array under a key called `data`
-    return json.data || [];
+    const data = await response.json();
+
+    // Log the data to verify its structure
+    console.log("Listings Data:", data);
+
+    // Ensure to return the correct property from the API response
+    // Assuming the listings are under 'data' property
+    return data.data || []; // Adjust this line based on actual API response structure
   } catch (error) {
-    console.error("Error fetching listings:", error);
+    console.error("Error fetching user listings:", error);
     throw error;
   }
 }

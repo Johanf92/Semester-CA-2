@@ -15,15 +15,13 @@ export async function displayProfileHandler() {
   }
 
   try {
-    // Update DOM with user name and email
     console.log("Setting user profile info");
     document.getElementById("profile-username").textContent = userName;
     document.getElementById("profile-email").textContent =
       localStorage.getItem("email");
 
-    // Fetch profile data
     console.log("Fetching profile data");
-    const response = await fetch(`${profileURL}${userName}`, {
+    const response = await fetch(`${profileURL}/${userName}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -41,19 +39,22 @@ export async function displayProfileHandler() {
 
     const profileData = await response.json();
     console.log("Profile data received:", profileData);
+
+    // Update profile information
     document.getElementById("credits").textContent = profileData.data.credits;
 
-    // Update profile picture if available
     if (profileData.data.avatar && profileData.data.avatar.url) {
       document.getElementById("profile-picture").src =
         profileData.data.avatar.url;
     }
 
-    // Fetch user listings
+    // Fetch user's listings
     console.log("Fetching user listings");
     const userListings = await getUserListings(userName);
 
-    if (userListings && userListings.length > 0) {
+    console.log("User Listings Response:", userListings);
+
+    if (userListings.length > 0) {
       console.log("Rendering user listings");
       renderProfileListings("#profile_listings", userListings);
     } else {

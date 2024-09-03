@@ -1,6 +1,7 @@
 .card-group {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   gap: 20px;
 
@@ -13,14 +14,19 @@
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 
+    // Set a minimum height to prevent collapse
+    min-height: 450px;
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .card-img-top {
-      height: 200px;
-      object-fit: cover;
+      width: 100%;
+      height: 200px; // Fixed height for all images
+      object-fit: cover; // Ensures the image covers the entire area while maintaining aspect ratio
+      display: block; // Ensures it behaves properly as a block-level element
     }
 
     .card-body {
@@ -33,7 +39,21 @@
 
       .card-text {
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
+        height: 200px; // Fixed height for description
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 8; // Limit the text to fit within the 200px height
+        -webkit-box-orient: vertical;
+
+        // Add hover effect to description
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
       }
 
       .tags {
@@ -48,20 +68,36 @@
 
     .card-footer {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       background-color: #f8f9fa;
       border-top: 1px solid #ddd;
       padding: 0.75rem 1rem;
-
-      .text-muted {
-        font-size: 0.875rem;
-      }
-
-      .btn-success {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-      }
     }
   }
 }
+
+/*
+@media (max-width: 770px) {
+  .card-group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: auto;
+  }
+  .card {
+    // Ensure cards maintain a minimum height on smaller screens
+    min-height: 500px;
+  }
+  .card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .card-img-top {
+    width: 100%; // Make sure the image scales with the card
+    height: auto;
+    max-height: 300px; // Adjust to fit within the card
+    object-fit: cover;
+  }
+}*/

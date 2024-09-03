@@ -10,10 +10,6 @@ import { listings_URL } from "../../constants/constants.mjs";
 export async function getListings() {
   const token = localStorage.getItem("token");
 
-  if (!token) {
-    throw new Error("Please log in to view posts");
-  }
-
   const options = {
     headers: {
       "Content-Type": "application/json",

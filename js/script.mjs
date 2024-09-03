@@ -13,8 +13,8 @@ function router() {
   console.log(pathname);
 
   switch (pathname) {
-    case "/":
-    case "/index.html":
+    case "/login/":
+    case "/login/index.html":
       loginFormHandler();
       console.log("Login page");
       break;

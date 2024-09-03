@@ -27,7 +27,7 @@ export function renderSingleListing(parent, listingData) {
  */
 
 function createListing(listingData) {
-  const listing = listingData.data;
+  const listings = listingData.data;
   const {
     id,
     title: heading,
@@ -38,14 +38,11 @@ function createListing(listingData) {
     _count,
     seller,
     endsAt,
-  } = listing;
-
-  console.log("Listing Data:", listing);
-  console.log("Seller Data:", seller);
+  } = listings;
 
   // Create the main card element
   const card = document.createElement("div");
-  card.classList.add("card", "mb-4");
+  card.classList.add("card", "mb-4", "bg-light");
 
   // Create the card body to hold all content
   const cardBody = document.createElement("div");
@@ -56,6 +53,9 @@ function createListing(listingData) {
   title.classList.add("card-title");
   title.textContent = heading;
   cardBody.appendChild(title);
+
+  const hr3 = document.createElement("hr");
+  cardBody.appendChild(hr3);
 
   // Seller information
   if (seller) {
@@ -68,9 +68,14 @@ function createListing(listingData) {
     );
 
     const sellerAvatar = document.createElement("img");
-    sellerAvatar.src = seller.avatar?.url || "default-avatar-url"; // Provide a default avatar URL if none
+    sellerAvatar.src = seller.avatar?.url || "default-avatar-url";
     sellerAvatar.alt = seller.avatar?.alt || seller.name || "Seller Avatar";
-    sellerAvatar.classList.add("seller-avatar", "rounded-circle", "me-2");
+    sellerAvatar.classList.add(
+      "seller-avatar",
+      "rounded-circle",
+      "me-2",
+      "img-fluid"
+    );
     sellerAvatar.style.width = "50px";
     sellerAvatar.style.height = "50px";
 
@@ -115,9 +120,8 @@ function createListing(listingData) {
       const img = document.createElement("img");
       img.src = image.url;
       img.alt = image.alt || heading;
-      img.classList.add("d-block", "w-100");
-      img.style.height = "250px"; // Adjust as needed
-      img.style.objectFit = "cover";
+      img.classList.add("d-block", "w-100", "img-fluid", "carousel-image"); // Added 'carousel-image' class
+      img.style.height = "auto"; // This can be controlled by CSS as well
 
       carouselItem.appendChild(img);
       carouselInner.appendChild(carouselItem);
@@ -130,9 +134,9 @@ function createListing(listingData) {
     prevButton.setAttribute("data-bs-target", `#carousel-${id}`);
     prevButton.setAttribute("data-bs-slide", "prev");
     prevButton.innerHTML = `
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          `;
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    `;
 
     const nextButton = document.createElement("button");
     nextButton.classList.add("carousel-control-next");
@@ -140,9 +144,9 @@ function createListing(listingData) {
     nextButton.setAttribute("data-bs-target", `#carousel-${id}`);
     nextButton.setAttribute("data-bs-slide", "next");
     nextButton.innerHTML = `
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          `;
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    `;
 
     carousel.appendChild(carouselInner);
     carousel.appendChild(prevButton);
@@ -151,17 +155,17 @@ function createListing(listingData) {
     cardBody.appendChild(carousel);
   } else {
     const img = document.createElement("img");
-    img.src = "default-image-url"; // Provide a default or placeholder image URL
+    img.src = "default-image-url";
     img.alt = "No image available";
-    img.classList.add("card-img-top", "mb-3");
-    img.style.height = "250px"; // Adjust as needed
-    img.style.objectFit = "cover";
+    img.classList.add("card-img-top", "mb-3", "img-fluid");
+    img.style.height = "auto"; // Adjust to fit within the container
+
     cardBody.appendChild(img);
   }
 
   // Description section
   const bodyParagraph = document.createElement("p");
-  bodyParagraph.classList.add("card-text");
+  bodyParagraph.classList.add("card-text", "bg-light");
   bodyParagraph.textContent = body || "No description available.";
   cardBody.appendChild(bodyParagraph);
 
@@ -185,60 +189,22 @@ function createListing(listingData) {
   const hr2 = document.createElement("hr");
   cardBody.appendChild(hr2);
 
-  // Bidding section
+  // Bids section
   const biddingSection = document.createElement("div");
-  biddingSection.id = "bidding-section";
+  biddingSection.classList.add("bids-container", "text-center", "mb-3");
+  biddingSection.style.padding = "10px";
+  biddingSection.style.borderRadius = "5px";
 
-  // Calculate the current highest bid
-  let currentBid =
+  const currentBid =
     bids && bids.length > 0 ? Math.max(...bids.map((bid) => bid.amount)) : 0;
   const bidCount = _count ? _count.bids : 0;
-
-  // Footer section with the bidding information
-  const cardFooter = document.createElement("div");
-  cardFooter.classList.add("card-footer", "text-center", "mt-3");
-
-  const currentBidText = document.createElement("p");
-  currentBidText.textContent = `Current Bid: $${currentBid} | Number of Bids: ${bidCount} | Auction ends on: ${new Date(
-    endsAt
-  ).toLocaleString()}`;
-  cardFooter.appendChild(currentBidText);
-
-  // Create a form for placing a bid
-  const bidForm = document.createElement("div");
-  bidForm.classList.add("bid-form");
-
-  const bidInput = document.createElement("input");
-  bidInput.type = "number";
-  bidInput.id = "bid-amount";
-  bidInput.classList.add("form-control");
-  bidInput.placeholder = "Enter your bid";
-
-  const bidButton = document.createElement("button");
-  bidButton.id = "place-bid-btn";
-  bidButton.classList.add("btn", "btn-primary", "mt-2");
-  bidButton.textContent = "Place Bid";
-
-  bidButton.addEventListener("click", async () => {
-    const bidAmount = parseFloat(bidInput.value);
-    if (bidAmount && bidAmount > currentBid) {
-      await placeBid(id, bidAmount);
-      currentBidText.textContent = `Current Bid: $${bidAmount} | Number of Bids: ${
-        bidCount + 1
-      } | Auction ends on: ${new Date(endsAt).toLocaleString()}`;
-    } else {
-      alert("Please enter a valid bid amount greater than the current bid.");
-    }
-  });
-
-  bidForm.appendChild(bidInput);
-  bidForm.appendChild(bidButton);
-
-  biddingSection.appendChild(bidForm);
 
   // List to display current bids
   const bidsList = document.createElement("ul");
   bidsList.id = "bids-list";
+  bidsList.style.listStyle = "none";
+  bidsList.style.padding = "0";
+  bidsList.style.margin = "0";
 
   if (bids && bids.length > 0) {
     bids.forEach((bid) => {
@@ -256,8 +222,78 @@ function createListing(listingData) {
 
   biddingSection.appendChild(bidsList);
 
-  cardBody.appendChild(biddingSection);
+  // Footer section with the bidding information
+  const cardFooter = document.createElement("div");
+  cardFooter.classList.add("card-footer", "text-center", "mt-3");
+  cardFooter.style.color = "red";
 
+  const currentBidText = document.createElement("p");
+  currentBidText.textContent = `Current Bid: $${currentBid} | Number of Bids: ${bidCount} | Auction ends on: ${new Date(
+    endsAt
+  ).toLocaleString()}`;
+  cardFooter.appendChild(currentBidText);
+
+  const bidForm = document.createElement("div");
+  bidForm.classList.add("bid-form", "text-center");
+  bidForm.style.marginTop = "10px";
+  bidForm.style.display = "flex";
+  bidForm.style.flexDirection = "column";
+  bidForm.style.alignItems = "center";
+
+  const bidInput = document.createElement("input");
+  bidInput.type = "number";
+  bidInput.id = "bid-amount";
+  bidInput.classList.add("form-control");
+  bidInput.placeholder = "Enter your bid";
+  bidInput.style.width = "100%";
+  bidInput.style.maxWidth = "300px";
+
+  const bidButton = document.createElement("button");
+  bidButton.id = "place-bid-btn";
+  bidButton.classList.add("btn", "btn-primary");
+  bidButton.textContent = "Place Bid";
+  bidButton.style.width = "100%";
+  bidButton.style.maxWidth = "300px";
+  bidButton.style.marginTop = "10px";
+
+  bidButton.addEventListener("click", async () => {
+    const bidAmount = parseFloat(bidInput.value);
+
+    // Confirm the bid with the user
+    const isConfirmed = window.confirm(
+      `Are you sure you want to place a bid of $${bidAmount}?`
+    );
+
+    if (isConfirmed) {
+      // Check if the bid amount is valid and greater than the current bid
+      if (bidAmount && bidAmount > currentBid) {
+        try {
+          await placeBid(id, bidAmount);
+
+          // Update the bid display (if you want to do this without refreshing)
+          currentBidText.textContent = `Current Bid: $${bidAmount} | Number of Bids: ${
+            bidCount + 1
+          } | Auction ends on: ${new Date(endsAt).toLocaleString()}`;
+
+          // Refresh the page
+          window.location.reload();
+        } catch (error) {
+          console.error("Failed to place bid:", error);
+          alert("There was an error placing your bid. Please try again.");
+        }
+      } else {
+        alert("Please enter a valid bid amount greater than the current bid.");
+      }
+    }
+  });
+
+  bidForm.appendChild(bidInput);
+  bidForm.appendChild(bidButton);
+
+  // Append the bidForm below the bidsList
+  biddingSection.appendChild(bidForm);
+
+  cardBody.appendChild(biddingSection);
   card.appendChild(cardBody);
   card.appendChild(cardFooter);
 
