@@ -9,7 +9,7 @@ export async function displayAvatarHandler() {
     const imageUrlInput = document.getElementById("avatarUrlInput");
 
     if (!updateButton || !imageUrlInput) {
-      console.error("Update button or image URL input element not found.");
+      //console.error("Update button or image URL input element not found.");
       return;
     }
 

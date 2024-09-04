@@ -27,7 +27,7 @@ export async function updateAvatar(avatarUrl, userName) {
   };
 
   try {
-    const response = await fetch(`${profileURL}${userName}`, options);
+    const response = await fetch(`${profileURL}/${userName}`, options);
     const json = await response.json();
 
     if (!response.ok) {

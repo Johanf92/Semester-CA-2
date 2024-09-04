@@ -1,8 +1,8 @@
-.wrapper {
+.wrapper-lr {
   background: #2a292980;
   padding: 0 20px 0 20px;
 }
-.main {
+.main-lr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,14 +26,14 @@
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-.right {
+.right-lr {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.input-box {
+.input-box-lr {
   width: 330px;
   box-sizing: border-box;
 }
@@ -45,14 +45,14 @@ img .side-image {
   left: 30px;
 }
 
-.input-field {
+.input-field-lr {
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 0 10px 0 10px;
 }
 
-.input {
+.input-lr {
   height: 45px;
   width: 100%;
   background: transparent;
@@ -62,24 +62,24 @@ img .side-image {
   margin-bottom: 20px;
   color: #151515;
 }
-.input-box .input-field label {
+.input-box-lr .input-field-lr label {
   position: absolute;
   top: 10px;
   left: 10px;
   pointer-events: none;
   transition: 0.5s;
 }
-.input-field input:focus ~ label {
+.input-field-lr input:focus ~ label {
   top: -10px;
   font-size: 13px;
 }
-.input-field input:valid ~ label {
+.input-field-lr input:valid ~ label {
   top: -10px;
   font-size: 13px;
   color: #e1963f;
 }
-.input-field .input:focus,
-.input-field .input:valid {
+.input-field-lr .input:focus,
+.input-field-lr .input:valid {
   border-bottom: 1px solid #88a184;
 }
 .submit {
@@ -117,7 +117,7 @@ span a:hover {
     border-radius: 10px 10px 0 0;
   }
 
-  img {
+  img .side-image {
     width: 35px;
     position: absolute;
     top: 20px;
