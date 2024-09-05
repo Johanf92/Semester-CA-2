@@ -19,6 +19,7 @@ export async function displayListingsHandler() {
     }
 
     renderListings("#listings", listings);
+    // filterListingsHandler(listings);
   } catch (error) {
     console.log(error);
     displayMessage("#listings", "danger", error.message);

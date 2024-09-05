@@ -6,6 +6,8 @@ import { displayAvatarHandler } from "./handlers/posts/displayAvatarHandler.mjs"
 import { displayProfileHandler } from "./handlers/posts/displayProfileHandler.mjs";
 import { displaySingleListingHandler } from "./handlers/posts/displaySingleListingHandler.mjs";
 import { createListingHandler } from "./handlers/posts/createListingHandler.mjs";
+import { searchListingsHandler } from "./handlers/posts/searchListingsHandler.mjs";
+import { searchListingsSetup } from "./handlers/posts/searchSetupHandler.mjs";
 
 function router() {
   const pathname = window.location.pathname;
@@ -27,6 +29,8 @@ function router() {
     case "/feed/index.html":
       logoutHandler();
       displayListingsHandler();
+      searchListingsHandler();
+      searchListingsSetup();
       console.log("This is the feed page");
       break;
     case "/listing/":

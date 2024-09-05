@@ -62,7 +62,7 @@
                 ></a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="/search/"
+                <a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"
                   ><i class="fa-solid fa-magnifying-glass"></i
                 ></a>
               </li>
@@ -72,7 +72,9 @@
             <a href="/profile/" class="me-3"
               ><i class="fa-regular fa-user"></i
             ></a>
-            <a href="/likes/"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
           </div>
         </div>
       </nav>
@@ -103,6 +105,49 @@
           <span class="">Noroff - CA - JS2</span>
         </div>
       </footer>
+    </div>
+
+    <!-- Search Modal -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">Search</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              class="form-control"
+              id="searchInput"
+              placeholder="Type your search here..."
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn submit search-button">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script

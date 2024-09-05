@@ -250,7 +250,7 @@ function createListing(listingData) {
 
   const bidButton = document.createElement("button");
   bidButton.id = "place-bid-btn";
-  bidButton.classList.add("btn", "btn-primary");
+  bidButton.classList.add("btn", "submit");
   bidButton.textContent = "Place Bid";
   bidButton.style.width = "100%";
   bidButton.style.maxWidth = "300px";
