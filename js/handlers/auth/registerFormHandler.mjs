@@ -7,10 +7,7 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
  */
 
 export function registerFormHandler() {
-  console.log("Function registerFormHandler is called");
-
   const form = document.querySelector("#registerForm");
-
   form.addEventListener("submit", handleRegisterForm);
 }
 
@@ -34,18 +31,14 @@ async function handleRegisterForm(event) {
   const entries = formData.entries();
   const userDetails = Object.fromEntries(entries);
 
-  console.log(userDetails);
-
   const fieldset = form.querySelector("fieldset");
 
   try {
     fieldset.disabled = true;
     const response = await register(userDetails);
-    console.log(response);
     displayMessage("#message", "success", "You registred successfully");
     form.reset();
   } catch (error) {
-    console.log(error);
     displayMessage("#message", "danger", error.message);
   } finally {
     fieldset.disabled = false;

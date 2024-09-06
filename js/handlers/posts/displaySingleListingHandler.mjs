@@ -3,11 +3,11 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { renderSingleListing } from "../../ui/listings/renderSingleListing.mjs";
 
 /**
- * Fetches and displays a single post based on the post ID from the URL query parameter.
- * If the post ID is not provided, it throws an error.
- * If the post is fetched successfully, it changes the document title to include the post title and renders the post.
- * If there is an error in fetching the post, it logs the error and displays an error message.
- * @throws {Error} When no post id is provided in the URL query parameter.
+ * Fetches and displays a single listing based on the listing ID from the URL query parameter.
+ * If the listing ID is not provided, it throws an error.
+ * If the listing is fetched successfully, it changes the document title to include the listing title and renders the listing.
+ * If there is an error in fetching the listing, it logs the error and displays an error message.
+ * @throws {Error} When no listing id is provided in the URL query parameter.
  */
 
 export async function displaySingleListingHandler() {
@@ -26,7 +26,6 @@ export async function displaySingleListingHandler() {
       renderSingleListing("#listing", listingData);
     }
   } catch (error) {
-    console.log(error);
     displayMessage("#listing", "danger", error.message);
   }
 }

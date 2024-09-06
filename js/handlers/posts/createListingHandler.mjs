@@ -1,6 +1,19 @@
 import { createListing } from "../../api/posts/createListing.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 
+/**
+ * Handles the form submission for creating a new listing.
+ *
+ * This function attaches a `submit` event listener to the form with the ID `#createListForm`. When the form is submitted,
+ * it collects the form data, validates the end date to ensure it's between now and one year from now, formats the media
+ * URLs and tags, and then sends the listing data to the server using the `createListing` function. It also displays
+ * success or error messages based on the outcome and redirects the user to the feed page upon successful creation.
+ *
+ * @async
+ * @function createListingHandler
+ *
+ */
+
 export async function createListingHandler() {
   const createListForm = document.querySelector("#createListForm");
   if (createListForm) {
@@ -30,7 +43,7 @@ export async function createListingHandler() {
       }
 
       const mediaArray = media.split(",").map((url) => ({
-        url: url.trim(), // Assuming the server expects an object with a 'url' property
+        url: url.trim(),
       }));
 
       const listData = {
@@ -42,7 +55,7 @@ export async function createListingHandler() {
       };
 
       try {
-        const json = await createListing(listData); // Call createListing here
+        const json = await createListing(listData);
         displayMessage(
           "#message",
           "success",

@@ -1,8 +1,14 @@
 import { remove } from "../../utilities/storage/index.mjs";
 
 /**
- * Handles the logout process.
- * When the logout button is clicked, the access token is removed from storage and the user is redirected to the home page.
+ * Sets up the logout functionality for the user.
+ *
+ * This function attaches a click event listener to the logout button. When the button is clicked, it triggers the
+ * `handleLogout` function, which removes the user's access token and other related data from local storage, logs a
+ * message to the console, and then redirects the user to the home page.
+ *
+ * @function logoutHandler
+ *
  */
 
 export function logoutHandler() {
@@ -13,13 +19,10 @@ export function logoutHandler() {
   function handleLogout(event) {
     event.preventDefault();
 
-    console.log("Logging out...");
-
     remove("token");
     remove("userName");
     remove("email");
 
-    console.log("localstorage cleared..");
     window.location.href = "/";
   }
 }

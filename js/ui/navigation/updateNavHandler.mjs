@@ -23,7 +23,6 @@ export function updateNavHandler() {
       logoutHandler();
     });
   } else {
-    // User is not logged in, show "Login" and redirect to the login page
     logoutButton.innerText = "Login";
     logoutButton.href = "/login/index.html";
   }
