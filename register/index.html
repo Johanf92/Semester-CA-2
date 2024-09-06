@@ -23,31 +23,35 @@
                     <div class="input-box-lr">
                        
                       <form id="registerForm">
-                       <h1 class="text-center mb-4"> Create Account </h1>
-
-                       <div id="message"></div>
-                       
-                       <fieldset>
-                       <div class="input-field-lr">
-                        <input type="text" class="input-lr" id="name" required="" autocomplete="off" name="name">
-                        <label for="name">Name</label> 
-                    </div> 
-                       <div class="input-field-lr">
-                            <input type="text" class="input-lr" id="email" required="" autocomplete="off" name="email">
-                            <label for="email">E-mail</label> 
-                        </div> 
-                       <div class="input-field-lr">
-                            <input type="password" class="input-lr" id="pass" required="" name="password">
-                            <label for="password">Password</label>
-                        </div> 
-                       <div class="input-field-lr">
-                            
+                        <h1 class="text-center mb-4">Create Account</h1>
+                      
+                        <div id="message"></div>
+                      
+                        <fieldset>
+                          <div class="input-field-lr">
+                            <input type="text" class="input-lr" id="name" placeholder="Name" 
+                                   required autocomplete="off" name="name" title="Name is required">
+                          </div>
+                          <div class="input-field-lr">
+                            <input type="email" class="input-lr" id="email" placeholder="E-mail (@stud.noroff.no)" 
+                                   required autocomplete="off" name="email"
+                                   pattern="[a-zA-Z0-9._%+-]+@stud\.noroff\.no$" 
+                                   title="Email must be in the format '@stud.noroff.no'">
+                          </div>
+                          <div class="input-field-lr">
+                            <input type="password" class="input-lr" id="pass" placeholder="Password (min 8 characters)" 
+                                   required minlength="8" title="Password must be at least 8 characters long" name="password">
+                          </div>
+                          <div class="input-field-lr">
                             <input type="submit" class="submit" value="Sign Up">
-                       </div> 
-                       <div class="signin">
-                        <span>Already have an account? <br> <a href="/login/index.html">Log in here</a></span>
-                      </fieldset>
+                          </div>
+                          <div class="signin">
+                            <span>Already have an account? <br> <a href="/login/index.html">Log in here</a></span>
+                          </div>
+                        </fieldset>
                       </form>
+                      
+                      
                        </div>
                     </div>  
                 </div>

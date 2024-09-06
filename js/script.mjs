@@ -8,6 +8,11 @@ import { displaySingleListingHandler } from "./handlers/posts/displaySingleListi
 import { createListingHandler } from "./handlers/posts/createListingHandler.mjs";
 import { searchListingsHandler } from "./handlers/posts/searchListingsHandler.mjs";
 import { searchListingsSetup } from "./handlers/posts/searchSetupHandler.mjs";
+import { updateNavHandler } from "./ui/navigation/updateNavHandler.mjs";
+//import {
+//validateRegisterForm,
+//validateLoginForm,
+//} from "./ui/validation/validation.mjs";
 
 function router() {
   const pathname = window.location.pathname;
@@ -18,11 +23,13 @@ function router() {
     case "/login/":
     case "/login/index.html":
       loginFormHandler();
+      //validateLoginForm();
       console.log("Login page");
       break;
     case "/register/":
     case "/register/index.html":
       registerFormHandler();
+      //validateRegisterForm();
       console.log("This is the registration page");
       break;
     case "/feed/":
@@ -31,12 +38,14 @@ function router() {
       displayListingsHandler();
       searchListingsHandler();
       searchListingsSetup();
+      updateNavHandler();
       console.log("This is the feed page");
       break;
     case "/listing/":
     case "/listing/index.html":
       logoutHandler();
       displaySingleListingHandler();
+      updateNavHandler();
       console.log("SingleListingPage");
       break;
     case "/profile/":
