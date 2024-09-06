@@ -13,16 +13,13 @@ export function updateNavHandler() {
     return;
   }
 
-  // Check if the user is logged in by checking the existence of the token in localStorage
   const token = get("token");
 
   if (token) {
-    // User is logged in, show "Logout" and set up the logout function
     logoutButton.innerText = "Logout";
-    logoutButton.href = "#"; // Prevents default action
+    logoutButton.href = "#";
     logoutButton.addEventListener("click", (event) => {
       event.preventDefault();
-      // Execute the logoutHandler function when the user clicks "Logout"
       logoutHandler();
     });
   } else {

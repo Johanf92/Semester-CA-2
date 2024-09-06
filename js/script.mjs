@@ -16,6 +16,9 @@ function router() {
   console.log(pathname);
 
   switch (pathname) {
+    case "/":
+    case "index.html":
+      break;
     case "/login/":
     case "/login/index.html":
       loginFormHandler();
@@ -53,6 +56,16 @@ function router() {
       createListingHandler();
       console.log("create listing page");
       break;
+    case "/likes/":
+    case "/likes/index.html":
+      logoutHandler();
+      updateNavHandler();
+      console.log("likes page");
+      break;
+    case "/about/":
+    case "/about/index.html":
+      logoutHandler();
+      updateNavHandler();
   }
 }
 
