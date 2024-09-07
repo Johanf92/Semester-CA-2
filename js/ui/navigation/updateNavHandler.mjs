@@ -1,4 +1,5 @@
 import { get } from "../../utilities/storage/index.mjs";
+import { logoutHandler } from "../../handlers/auth/logoutHandler.mjs"; // Adjust the path as necessary
 
 /**
  * Updates the navigation button based on the user's login status.

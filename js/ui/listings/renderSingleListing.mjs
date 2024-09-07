@@ -1,4 +1,4 @@
-import { getBid } from "../../api/posts/getBid.mjs";
+//import { getBid } from "../../api/posts/getBid.mjs";
 import { placeBid } from "../../handlers/posts/createBidHandler.mjs";
 
 /**

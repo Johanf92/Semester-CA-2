@@ -55,7 +55,7 @@ export async function createListingHandler() {
       };
 
       try {
-        const json = await createListing(listData);
+        await createListing(listData);
         displayMessage(
           "#message",
           "success",

@@ -26,7 +26,6 @@ async function handleRegisterForm(event) {
   event.preventDefault();
 
   const form = event.target;
-
   const formData = new FormData(form);
   const entries = formData.entries();
   const userDetails = Object.fromEntries(entries);
@@ -35,8 +34,8 @@ async function handleRegisterForm(event) {
 
   try {
     fieldset.disabled = true;
-    const response = await register(userDetails);
-    displayMessage("#message", "success", "You registred successfully");
+    await register(userDetails); // No need to assign the response if it's not used
+    displayMessage("#message", "success", "You registered successfully");
     form.reset();
   } catch (error) {
     displayMessage("#message", "danger", error.message);

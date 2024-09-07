@@ -28,7 +28,7 @@ export async function searchListingsHandler() {
     } else {
       displayMessage("info", "No listings found", "#listings");
     }
-  } catch (error) {
+  } catch {
     displayMessage("error", "An error occurred while searching.", "#listings");
   }
 }
