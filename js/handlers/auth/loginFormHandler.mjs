@@ -50,7 +50,6 @@ async function handleLoginForm(event) {
       utilities.save("email", email);
 
       const apiKey = await createApiKey(accessToken);
-      console.log("Saved API Key:", apiKey);
 
       window.location.href = "/feed";
     } else {

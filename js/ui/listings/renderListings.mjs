@@ -3,8 +3,6 @@
  */
 
 export function renderListings(parent, listings) {
-  console.log("Listings data:", listings);
-
   const container = document.querySelector(parent);
 
   container.innerHTML = "";

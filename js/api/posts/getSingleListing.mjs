@@ -40,8 +40,6 @@ export async function getSingleListing(id) {
   );
   const json = await response.json();
 
-  console.log("API Response:", json); // Debugging output
-
   if (!response.ok) {
     throw new Error(json.errors[0].message);
   }
