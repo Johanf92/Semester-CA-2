@@ -87,3 +87,4 @@ The following links are required for project delivery:
 - Function for liking auctions
 - Rewrite the "About" page
 - Redesign the landing page
+- Edit/Delite function for users listings
