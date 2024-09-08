@@ -48,8 +48,6 @@ async function handleLoginForm(event) {
       utilities.save("userName", name);
       utilities.save("email", email);
 
-      //const apiKey = await createApiKey(accessToken);
-
       window.location.href = "/feed";
     } else {
       console.error("AccessToken not found in response:", data);
