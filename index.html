@@ -18,6 +18,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Auction Book</title>
   </head>
 
@@ -44,13 +50,6 @@
                   role="button"
                   >Register New User</a
                 >
-                <br />
-                <a
-                  class="btn btn-secondary btn-lg"
-                  href="login/index.html"
-                  role="button"
-                  >Log in</a
-                >
               </p>
             </div>
           </div>
@@ -64,22 +63,64 @@
             handle the rest, ensuring you make sales effortlessly while you
             focus on what matters most.
           </p>
-          <h4>Please Join us today</h4>
-        </div>
-
-        <hr class="w-75 mx-auto my-4" />
-
-        <div class="container text-center">
-          <h2 class="text-center mb-4 mt-4">Latest Live Auctions:</h2>
-          <a class="btn submit" href="/feed/index.html" role="button"
-            >Live Auctions:</a
+          <h4>Log in here:</h4>
+          <a
+            class="btn btn-success btn-lg px-5"
+            href="login/index.html"
+            role="button"
+            >Log in</a
           >
+        </div>
+
+        <hr class="w-75 mx-auto my-4" />
+
+        <div class="container text-center latest-auctions-container py-4">
+          <h2 class="text-center mb-4 mt-4">Latest Live Auctions:</h2>
           <h5 class="mt-4">Check out our latest and greatest auctions here:</h5>
+          <div class="auction-row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <img
+                src="https://images.pexels.com/photos/9145351/pexels-photo-9145351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid"
+                alt="Jewelry"
+              />
+              <p class="mt-2">Jewelry</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <img
+                src="https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid"
+                alt="Cars"
+              />
+              <p class="mt-2">Motor</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <img
+                src="https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid"
+                alt="Electronics"
+              />
+              <p class="mt-2">Electronics</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <img
+                src="https://images.pexels.com/photos/886521/pexels-photo-886521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid"
+                alt="Art"
+              />
+              <p class="mt-2">Art</p>
+            </div>
+          </div>
+          <div class="auction-row justify-content-center mt-auto">
+            <a class="btn submit mt-1" href="/feed/index.html" role="button"
+              >View All Live Auctions</a
+            >
+          </div>
         </div>
         <hr class="w-75 mx-auto my-4" />
 
         <div class="container text-center">
-          <h2 class="text-center mb-4 mt-4">About</h2>
+          <h2 class="text-center mb-4 mt-4">Learn more about us:</h2>
           <p>
             At AuctionBook, we pride ourselves on offering a dynamic and
             transparent auction experience that connects buyers and sellers with

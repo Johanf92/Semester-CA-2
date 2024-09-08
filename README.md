@@ -62,12 +62,10 @@ The project must adhere to the following technical restrictions:
 
 - GitHub Projects
 
-## Project Links
+## Project Required Links
 
-The following links are required for project delivery:
-
-- **Design Prototype**: [Design Prototype Link](URL_TO_PROTOTYPE)
-- **Style Guide**: [Style Guide Link](URL_TO_STYLE_GUIDE)
+- **Design Wireframe**: [Design Prototype Link](https://xd.adobe.com/view/b60bd770-3319-4e28-ab77-eb19a4a6c1c2-e358/)
+- **Style Guide**: [Style Guide Link](https://xd.adobe.com/view/b60bd770-3319-4e28-ab77-eb19a4a6c1c2-e358/)
 - **Gantt Chart**: [Gantt Chart Link](https://github.com/users/Zarden92/projects/1/views/1)
 - **Kanban Project Board**: [Kanban Project Board Link](https://github.com/users/Zarden92/projects/1/views/5)
 - **Hosted Application Demo**: [Hosted Application Demo Link](URL_TO_DEMO)
