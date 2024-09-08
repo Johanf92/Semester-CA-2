@@ -16,11 +16,8 @@ export async function login(userDetails) {
     body: JSON.stringify(userDetails),
   };
 
-  console.log(userDetails);
-
   const response = await fetch(loginURL, options);
   const json = await response.json();
-  console.log(response);
 
   if (response.ok) {
     return json;

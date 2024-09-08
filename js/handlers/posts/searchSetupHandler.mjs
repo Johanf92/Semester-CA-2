@@ -15,19 +15,14 @@ import { searchListingsHandler } from "../../handlers/posts/searchListingsHandle
  */
 
 export function searchListingsSetup() {
-  console.log("Setting up search listings...");
   const searchBtn = document.querySelector("#searchModal .search-button");
 
   if (searchBtn) {
-    console.log("Search button found");
     searchBtn.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log("Search button clicked");
       searchListingsHandler();
     });
   } else {
     console.error("Search button not found");
   }
 }
-// Call this function when the document is ready
-document.addEventListener("DOMContentLoaded", searchListingsSetup);

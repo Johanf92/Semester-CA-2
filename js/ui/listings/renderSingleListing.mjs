@@ -5,7 +5,6 @@ import { createImageModal } from "../../ui/common/imageModal.mjs";
  * Renders a list of posts into a specified parent element.
  */
 export function renderSingleListing(parent, listingData) {
-  console.log("Listings Data:", listingData); // Debugging output
 
   const container = document.querySelector(parent);
   container.innerHTML = "";
@@ -14,7 +13,6 @@ export function renderSingleListing(parent, listingData) {
     const listingHtml = createListing(listingData);
     container.appendChild(listingHtml);
 
-    // Call the function to initialize the image modal
     createImageModal();
   } else {
     console.warn("Listing data or data property is missing.");
@@ -136,15 +134,14 @@ function createListing(listingData) {
       img.alt = image.alt || heading;
       img.classList.add("d-block", "w-100", "img-fluid", "carousel-image");
 
-      // Make the image clickable to open in the modal
       img.style.cursor = "pointer";
       img.addEventListener("click", () => {
         const modalImage = document.getElementById("modalImage");
-        modalImage.src = image.url; // Set the clicked image's URL to the modal image
+        modalImage.src = image.url; 
         const imageModal = new bootstrap.Modal(
           document.getElementById("imageModal")
         );
-        imageModal.show(); // Show the modal when an image is clicked
+        imageModal.show(); 
       });
 
       carouselItem.appendChild(img);
@@ -187,7 +184,7 @@ function createListing(listingData) {
   }
 
   const descriptionHeading = document.createElement("h3");
-  descriptionHeading.classList.add("text-center", "mb-3"); // Center the heading and add margin-bottom
+  descriptionHeading.classList.add("text-center", "mb-3"); 
   descriptionHeading.textContent = "Description:";
   cardBody.appendChild(descriptionHeading);
 
