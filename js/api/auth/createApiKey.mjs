@@ -10,8 +10,6 @@ import { createApiKeyURL } from "../../constants/constants.mjs";
  * @async
  * @function createApiKey
  * @param {string} token - The user's authorization token to authenticate the request.
- * @returns {Promise<string>} Resolves with the newly created API key as a string.
- * @throws {Error} If the API request fails, an error is thrown with the first error message from the API's response.
  */
 
 export async function createApiKey(token) {
