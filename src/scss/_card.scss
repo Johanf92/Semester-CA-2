@@ -13,8 +13,6 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-
-    // Set a minimum height to prevent collapse
     min-height: 450px;
 
     &:hover {
@@ -24,9 +22,9 @@
 
     .card-img-top {
       width: 100%;
-      height: 200px; // Fixed height for all images
-      object-fit: cover; // Ensures the image covers the entire area while maintaining aspect ratio
-      display: block; // Ensures it behaves properly as a block-level element
+      height: 200px;
+      object-fit: cover;
+      display: block;
     }
 
     .card-body {
@@ -40,19 +38,19 @@
       .card-text {
         font-size: 1rem;
         margin-bottom: 0.75rem;
-        height: 200px; // Fixed height for description
+        height: 200px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 8; // Limit the text to fit within the 200px height
+        -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;
 
-        // Add hover effect to description
         transition: transform 0.3s, box-shadow 0.3s;
 
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          border: solid #a7aaad5c;
         }
       }
 
@@ -77,27 +75,25 @@
   }
 }
 
-/*
-@media (max-width: 770px) {
-  .card-group {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    height: auto;
-  }
-  .card {
-    // Ensure cards maintain a minimum height on smaller screens
-    min-height: 500px;
-  }
-  .card-body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .card-img-top {
-    width: 100%; // Make sure the image scales with the card
-    height: auto;
-    max-height: 300px; // Adjust to fit within the card
-    object-fit: cover;
-  }
-}*/
+.countdown {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.countdown-text {
+  font-weight: bold;
+}
+
+.time-display {
+  color: #f58e34;
+}
+
+/* Ensure links inside cards have no default styling */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link img {
+  display: block;
+}

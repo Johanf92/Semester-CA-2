@@ -1,10 +1,8 @@
-/* Wrapper for the form section */
 .wrapper-lr {
   background: #2a292980;
   padding: 0 20px 0 20px;
 }
 
-/* Main container for centering the form */
 .main-lr {
   display: flex;
   justify-content: center;
@@ -12,7 +10,6 @@
   min-height: 100vh;
 }
 
-/* Side image styling */
 .side-image {
   background-image: url("https://images.pexels.com/photos/6077422/pexels-photo-6077422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-position: center;
@@ -22,7 +19,6 @@
   position: relative;
 }
 
-/* Row for login/register container */
 .row {
   width: 900px;
   height: 550px;
@@ -32,7 +28,6 @@
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* Right section of the login/register page */
 .right-lr {
   display: flex;
   justify-content: center;
@@ -40,22 +35,19 @@
   position: relative;
 }
 
-/* Input box wrapper */
 .input-box-lr {
   width: 330px;
   box-sizing: border-box;
 }
 
-/* Input field container */
 .input-field-lr {
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 0 10px 0 10px;
-  margin-bottom: 15px; /* Standard spacing between fields */
+  margin-bottom: 15px;
 }
 
-/* Input field styling */
 .input-lr {
   height: 45px;
   width: 100%;
@@ -68,25 +60,19 @@
   padding: 10px 0;
 }
 
-/* Placeholder text styling */
 .input-lr::placeholder {
   color: #999;
   font-size: 14px;
 }
 
-/* Input field when invalid (e.g., wrong email format, short password) */
 .input-lr:invalid {
   border-bottom: 1px solid red;
 }
 
-/* Optional: Input field when valid */
 .input-lr:valid {
   border-bottom: 1px solid #34b820;
 }
 
-/* Error message paragraph styling */
-
-/* Submit button styling */
 .submit {
   background: linear-gradient(#f2994a 0%, #f2c94c 51%, #f2994a 100%);
   border: none;
@@ -94,7 +80,7 @@
   height: 45px;
   border-radius: 5px;
   transition: 0.4s;
-  margin-top: 20px; /* Space between input fields and button */
+  margin-top: 20px;
 }
 
 .submit:hover {
@@ -102,7 +88,6 @@
   text-decoration: underline;
 }
 
-/* "Already have an account?" or "Join the auction community" text styling */
 .signin {
   text-align: center;
   font-size: small;
@@ -121,7 +106,6 @@ span a:hover {
   color: #000;
 }
 
-/* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
   .side-image {
     border-radius: 10px 10px 0 0;

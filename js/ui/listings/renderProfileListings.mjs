@@ -69,7 +69,7 @@ function createListing(listing) {
 
   const button = document.createElement("button");
   button.textContent = "View listing";
-  button.classList.add("btn", "btn-primary");
+  button.classList.add("btn", "submit", "px-5");
 
   button.addEventListener("click", () => {
     window.location.href = `/listing/index.html?id=${id}`;

@@ -23,7 +23,7 @@
 
   <body>
     <div class="footer_alignment">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/feed/">Semester Project 2</a>
           <button
@@ -55,7 +55,6 @@
               <li class="nav-item">
                 <a class="btn" id="logoutBtn">Logout</a>
               </li>
-              <!-- Icons for smaller screens -->
               <li class="nav-item d-lg-none">
                 <a class="nav-link" href="/profile/"
                   ><i class="fas fa-user"></i
@@ -82,7 +81,7 @@
       <main>
         <hr class="custom-hr" />
         <div class="container text-center">
-          <h2 class="text-center mb-4 mt-4">Listings</h2>
+          <h2 class="text-center mb-4 mt-5">Listings</h2>
           <p>Please create a listing by clicking the button</p>
           <a
             href="/feed/createListing.html"
@@ -94,6 +93,8 @@
         <hr class="custom-hr" />
 
         <div class="container">
+          <div id="message"></div>
+
           <div id="listings" class="loading">
             <div class="loader"></div>
           </div>
@@ -107,7 +108,6 @@
       </footer>
     </div>
 
-    <!-- Search Modal -->
     <div
       class="modal fade"
       id="searchModal"

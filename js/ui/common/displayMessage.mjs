@@ -9,5 +9,10 @@
 export function displayMessage(parent, messageType, message) {
   const container = document.querySelector(parent);
 
+  if (!container) {
+    console.error(`Error: The container "${parent}" was not found.`);
+    return;
+  }
+
   container.innerHTML = `<div class="alert alert-${messageType}">${message}</div>`;
 }

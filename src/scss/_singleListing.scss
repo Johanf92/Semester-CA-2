@@ -1,5 +1,15 @@
 .carousel-image {
-  max-height: 500px; // Adjust this value as needed
-  max-width: 100%; // This keeps the image responsive within its container
-  object-fit: cover; // Ensures the image covers the container while maintaining aspect ratio
+  max-height: 500px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.return-singleListing {
+  color: black;
+  font-size: medium;
+}
+
+.return-singleListing:hover {
+  font-size: larger;
+  color: orange;
 }
