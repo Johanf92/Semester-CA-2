@@ -9,14 +9,8 @@ The objective of this project is to utilize the skills learned over the past thr
 An auction site aims to launch a platform where:
 
 - Users can register, add items for auction, and place bids on other users' items.
-- New users receive 1000 credits upon registration to use on the site. Credits can be earned by selling items and used by buying items.
+- New users receive 1000 credits upon registration to use on the site.
 - Non-registered users can browse through the listings but only registered users can place bids.
-
-**Note:** This project focuses on the front-end application that interacts with an existing API.
-
-## API
-
-The backend functionality is managed by an existing application. The API details for this project can be found under Auction Endpoints in the Noroff API documentation.
 
 ## Resources
 
@@ -51,7 +45,6 @@ The project must adhere to the following technical restrictions:
 ### CSS Processors
 
 - SASS/SCSS
-- PostCSS
 
 ### CSS Frameworks
 
@@ -59,7 +52,6 @@ The project must adhere to the following technical restrictions:
 
 ### Hosting Services
 
-- GitHub Pages
 - Netlify
 
 ### Design Applications
@@ -80,16 +72,18 @@ The following links are required for project delivery:
 - **Kanban Project Board**: [Kanban Project Board Link](https://github.com/users/Zarden92/projects/1/views/5)
 - **Hosted Application Demo**: [Hosted Application Demo Link](URL_TO_DEMO)
 
-## Delivery Instructions
-
-Submit the required links in the Moodle delivery window using the specified template format. Ensure all final changes are merged into the default branch (main or master). Other branches will not be checked.
-
 ## Setup and Run Locally
 
 - npm i
 - npm run build
 - npm run watch
 
-### Errors
+### Check Code Errors
 
 - npm run lint
+
+## Work in Progress - Things I Still Want to Do
+
+- Function for liking auctions
+- Rewrite the "About" page
+- Redesign the landing page
