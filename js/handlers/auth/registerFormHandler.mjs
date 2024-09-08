@@ -38,10 +38,9 @@ async function handleRegisterForm(event) {
 
     form.reset();
 
-    // Redirect to login page after a brief delay
     setTimeout(() => {
       window.location.href = "/login/index.html";
-    }, 2000); // 2-second delay to allow the user to see the message
+    }, 2000);
   } catch (error) {
     displayMessage("#message", "danger", error.message);
   } finally {

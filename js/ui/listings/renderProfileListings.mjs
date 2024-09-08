@@ -30,7 +30,7 @@ function createListing(listing) {
     img.src = media[0].url;
     img.alt = media[0].alt || heading;
   } else {
-    img.src = ""; // Provide a default or placeholder image URL
+    img.src = "";
     img.alt = "No image available";
   }
   img.classList.add("card-img-top");

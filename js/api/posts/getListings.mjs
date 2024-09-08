@@ -1,7 +1,7 @@
 import { listings_URL } from "../../constants/constants.mjs";
 
 /**
- * Fetches all listings (posts) from the server.
+ * Fetches all listings from the server.
  *
  * This function sends a `GET` request to retrieve all available listings. The user must be authenticated via a token
  * stored in `localStorage`. If the request is successful, it returns an array of post data. If the user is not logged in

@@ -21,7 +21,7 @@ export async function createApiKey(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ name: "My API Key name" }), // Optional body
+    body: JSON.stringify({ name: "My API Key name" }),
   };
 
   const response = await fetch(createApiKeyURL, options);

@@ -41,12 +41,10 @@ function createListing(listing) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  // Create the link for the card
   const link = document.createElement("a");
   link.href = `/listing/index.html?id=${id}`;
   link.classList.add("card-link");
 
-  // Image section
   const img = document.createElement("img");
   if (media && media.length > 0) {
     img.src = media[0].url;
@@ -58,7 +56,6 @@ function createListing(listing) {
   }
   img.classList.add("card-img-top", "img-fluid");
 
-  // Card body
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
@@ -79,7 +76,6 @@ function createListing(listing) {
 
   tagsDiv.appendChild(tagsLabel);
 
-  // Countdown timer section
   const countdown = document.createElement("div");
   countdown.classList.add("countdown");
 
@@ -100,13 +96,11 @@ function createListing(listing) {
 
   cardBody.appendChild(tagsDiv);
 
-  // Add horizontal line
   const hr = document.createElement("hr");
   cardBody.appendChild(hr);
 
   cardBody.appendChild(countdown);
 
-  // Card footer
   const cardFooter = document.createElement("div");
   cardFooter.classList.add("card-footer");
 
@@ -125,13 +119,11 @@ function createListing(listing) {
 
   cardFooter.appendChild(button);
 
-  // Append the image and card body to the link
   link.appendChild(img);
   link.appendChild(cardBody);
   card.appendChild(link);
   card.appendChild(cardFooter);
 
-  // Function to update the countdown timer
   function updateCountdown() {
     const now = new Date();
     const endDate = new Date(endsAt);
@@ -154,7 +146,6 @@ function createListing(listing) {
     }
   }
 
-  // Update the countdown every second
   const countdownInterval = setInterval(updateCountdown, 1000);
 
   return card;

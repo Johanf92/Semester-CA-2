@@ -5,7 +5,6 @@ import { createImageModal } from "../../ui/common/imageModal.mjs";
  * Renders a list of posts into a specified parent element.
  */
 export function renderSingleListing(parent, listingData) {
-
   const container = document.querySelector(parent);
   container.innerHTML = "";
 
@@ -101,14 +100,12 @@ function createListing(listingData) {
     console.warn("Seller information is missing.");
   }
 
-  // Image carousel section
   if (media && media.length > 0) {
     const carousel = document.createElement("div");
     carousel.id = `carousel-${id}`;
     carousel.classList.add("carousel", "slide", "mb-3");
     carousel.setAttribute("data-bs-ride", "carousel");
 
-    // Carousel indicators
     const indicators = document.createElement("ol");
     indicators.classList.add("carousel-indicators");
     media.forEach((_, index) => {
@@ -120,7 +117,6 @@ function createListing(listingData) {
     });
     carousel.appendChild(indicators);
 
-    // Carousel inner container
     const carouselInner = document.createElement("div");
     carouselInner.classList.add("carousel-inner");
 
@@ -137,18 +133,17 @@ function createListing(listingData) {
       img.style.cursor = "pointer";
       img.addEventListener("click", () => {
         const modalImage = document.getElementById("modalImage");
-        modalImage.src = image.url; 
+        modalImage.src = image.url;
         const imageModal = new bootstrap.Modal(
           document.getElementById("imageModal")
         );
-        imageModal.show(); 
+        imageModal.show();
       });
 
       carouselItem.appendChild(img);
       carouselInner.appendChild(carouselItem);
     });
 
-    // Carousel controls
     const prevButton = document.createElement("button");
     prevButton.classList.add("carousel-control-prev");
     prevButton.type = "button";
@@ -184,7 +179,7 @@ function createListing(listingData) {
   }
 
   const descriptionHeading = document.createElement("h3");
-  descriptionHeading.classList.add("text-center", "mb-3"); 
+  descriptionHeading.classList.add("text-center", "mb-3");
   descriptionHeading.textContent = "Description:";
   cardBody.appendChild(descriptionHeading);
 
