@@ -5,12 +5,8 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
  * Attaches the register form submission event handler.
  * This function is called to attach the `handleRegisterForm` function to the submit event of the form with id "registerForm".
  */
-
 export function registerFormHandler() {
-  console.log("Function registerFormHandler is called");
-
   const form = document.querySelector("#registerForm");
-
   form.addEventListener("submit", handleRegisterForm);
 }
 
@@ -29,23 +25,24 @@ async function handleRegisterForm(event) {
   event.preventDefault();
 
   const form = event.target;
-
   const formData = new FormData(form);
   const entries = formData.entries();
   const userDetails = Object.fromEntries(entries);
-
-  console.log(userDetails);
 
   const fieldset = form.querySelector("fieldset");
 
   try {
     fieldset.disabled = true;
-    const response = await register(userDetails);
-    console.log(response);
-    displayMessage("#message", "success", "You registred successfully");
+    await register(userDetails);
+    displayMessage("#message", "success", "You registered successfully");
+
     form.reset();
+
+    // Redirect to login page after a brief delay
+    setTimeout(() => {
+      window.location.href = "/login/index.html";
+    }, 2000); // 2-second delay to allow the user to see the message
   } catch (error) {
-    console.log(error);
     displayMessage("#message", "danger", error.message);
   } finally {
     fieldset.disabled = false;

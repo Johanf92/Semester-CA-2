@@ -6,6 +6,7 @@ import { listings_URL } from "../../constants/constants.mjs";
  * @param {number} amount - The bid amount.
  * @returns {Promise<Object>} The response data.
  */
+
 export async function placeBid(id, amount) {
   const token = localStorage.getItem("token");
   const apiKey = localStorage.getItem("apiKey");
@@ -33,6 +34,5 @@ export async function placeBid(id, amount) {
     );
   }
 
-  console.log(json); // Log the response to check its format
   return json;
 }

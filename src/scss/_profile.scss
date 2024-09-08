@@ -18,8 +18,8 @@
   }
 
   .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
   }
 
@@ -50,4 +50,23 @@
       margin: 1rem;
     }
   }
+}
+
+.profile-picture-container {
+  position: relative;
+  display: inline-block;
+}
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+}
+.edit-icon i {
+  font-size: 30px;
 }

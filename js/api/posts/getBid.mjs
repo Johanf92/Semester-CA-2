@@ -1,10 +1,20 @@
 import { listings_URL } from "../../constants/constants.mjs";
 
 /**
- * Fetches bids for a specific listing by ID.
- * @param {string} id - The ID of the listing to fetch bids for.
- * @returns {Promise<Object>} The bid data.
+ * Fetches the bids for a specific listing by its ID.
+ *
+ * This function sends a `GET` request to retrieve the bid data for a given listing. The user must be authenticated
+ * via a token stored in `localStorage`. If the request is successful, it returns the bid data associated with the listing.
+ * If the request fails or the user is not logged in, an error is thrown.
+ *
+ * @async
+ * @function getBid
+ * @param {string} id - The unique ID of the listing for which to fetch bids.
+ * @returns {Promise<Object>} Resolves with the bid data for the listing.
+ * @throws {Error} If the user is not logged in, or if the request fails, an error is thrown with a relevant message.
+ *
  */
+
 export async function getBid(id) {
   const token = localStorage.getItem("token");
 
@@ -28,6 +38,5 @@ export async function getBid(id) {
     );
   }
 
-  console.log(json); // Log the response to check its format
   return json;
 }

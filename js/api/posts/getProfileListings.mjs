@@ -1,11 +1,20 @@
-import { listings_URL, profileURL } from "../../constants/constants.mjs";
+import { profileURL } from "../../constants/constants.mjs";
 
 /**
  * Fetches all listings created by the specified user.
- * @param {string} userName - The username whose listings you want to retrieve.
- * @returns {Promise<Array>} - The user's listings.
+ *
+ * This function sends a `GET` request to retrieve all listings associated with a given username.
+ * The user must be authenticated via a token and API key stored in `localStorage`. If the request
+ * is successful, it returns an array of the user's listings. If the request fails, an error is thrown.
+ *
+ * @async
+ * @function getUserListings
+ * @param {string} userName - The username whose listings are to be retrieved.
+ * @returns {Promise<Array<Object>>} Resolves with an array of listings created by the specified user.
+ * @throws {Error} If the request fails, an error is thrown with the appropriate status message.
+ *
  */
-// Fetch user's listings based on their username
+
 export async function getUserListings(userName) {
   try {
     const token = localStorage.getItem("token");
@@ -27,12 +36,7 @@ export async function getUserListings(userName) {
 
     const data = await response.json();
 
-    // Log the data to verify its structure
-    console.log("Listings Data:", data);
-
-    // Ensure to return the correct property from the API response
-    // Assuming the listings are under 'data' property
-    return data.data || []; // Adjust this line based on actual API response structure
+    return data.data || [];
   } catch (error) {
     console.error("Error fetching user listings:", error);
     throw error;

@@ -61,3 +61,13 @@
     }
   }
 }
+
+// SEARCH BAR //
+/* Custom styles for search modal (optional) */
+.modal-header {
+  background: linear-gradient(#f2994a 0%, #f2c94c 51%, #f2994a 100%);
+}
+
+.modal-header .btn-close {
+  margin-left: auto;
+}

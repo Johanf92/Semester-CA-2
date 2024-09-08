@@ -1,7 +1,6 @@
 import { login } from "../../api/auth/login.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import * as utilities from "../../utilities/storage/index.mjs";
-import { createApiKey } from "../../api/auth/createApiKey.mjs";
 
 /**
  * Attaches the login form submission event handler.
@@ -41,30 +40,21 @@ async function handleLoginForm(event) {
     fieldset.disabled = true;
     const response = await login(userDetails);
 
-    console.log("API Response:", response); // Debugging log
-
     const { data } = response;
     const { accessToken, name, email } = data;
 
     if (data && accessToken) {
-      console.log("Saving to storage..."); // Debugging log
       utilities.save("token", accessToken);
-      console.log("Saved Token:", utilities.get("token")); // Debugging log
       utilities.save("userName", name);
-      console.log("Saved User Name:", utilities.get("userName")); // Debugging log
       utilities.save("email", email);
-      console.log("Saved Email:", utilities.get("email")); // Debugging log
 
-      // Create and store the API Key
-      const apiKey = await createApiKey(accessToken);
-      console.log("Saved API Key:", apiKey); // Debugging log
+      //const apiKey = await createApiKey(accessToken);
 
       window.location.href = "/feed";
     } else {
       console.error("AccessToken not found in response:", data);
     }
   } catch (error) {
-    console.log("Error during login process:", error); // Debugging log
     displayMessage("#message", "danger", error.message);
   } finally {
     fieldset.disabled = false;

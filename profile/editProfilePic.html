@@ -14,29 +14,43 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Edit Profile Picture</title>
   </head>
 
   <body>
     <div class="footer_alignment">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
-        <!-- Navigation content here -->
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 mx-auto"
+          >Course Assignment 2 - AuctionBook</span
+        >
       </nav>
 
       <main>
         <div class="container">
+          <form>
           <h1 class="text-center mt-5">Update Profile Picture</h1>
           <div id="profile-info">
             <div class="mb-3">
-              <label for="image-url" class="form-label">Image URL</label>
-              <input type="text" id="avatarUrlInput" placeholder="Enter image URL" class="form-control mb-3" />
-              <button id="updateAvatarBtn" class="btn btn-primary px-3">Update Avatar</button>
-              <span><a class="px-3" href="/profile/index.html">Return to profile</a></span>
+              <label for="image-url" class="form-label">Image URL:</label>
+              <input required type="url" id="avatarUrlInput" placeholder="Enter image URL" class="form-control mb-3" />
+              <div class="text-center mt-3">
+              <button id="updateAvatarBtn" class="btn submit px-5">Update Avatar</button>
+              <br class="mb-5">
+              <span><a class="px-4" href="/profile/index.html">Return to profile</a></span>
+            </div>
+          </form>
         </div>
       </main>
 
       <footer class="footer mt-auto py-3">
-        <!-- Footer content here -->
+        <div class="container text-center">
+          <span>Noroff - CA - JS2</span>
+          <br />
+          <span>Johan Fredric Aas-Haug</span>
+        </div>
       </footer>
     </div>
 

@@ -1,25 +1,57 @@
 .landingPage-banner {
   background-image: url("https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover; /* Ensures the image covers the entire banner */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  color: white; /* Ensures text is readable against the background */
-  padding: 100px 0; /* Adjust padding to create space for the content */
-  text-align: center; /* Centers text horizontally within the banner */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
 }
 
 .landingPage-content {
-  z-index: 1; /* Ensures content is above the background image */
+  z-index: 1;
+}
+
+.auction-row img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .landingPage-content {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.662
-  ); /* Black background with 50% opacity */
-  padding: 20px; /* Adds padding around the content */
-  border-radius: 8px; /* Optional: rounds the corners */
-  z-index: 1; /* Ensures the content is above the background */
+  background-color: rgba(0, 0, 0, 0.662);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.latest-auctions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  min-height: 500px;
+}
+
+.auction-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.latest-auctions-container .submit {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .auction-row img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auction-row img {
+    height: 120px;
+  }
 }

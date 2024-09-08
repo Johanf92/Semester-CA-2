@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Profile page for your account at AuctionBook, here you can see your credits and listings"
+    />
+
     <script
       src="https://kit.fontawesome.com/cbab126387.js"
       crossorigin="anonymous"
@@ -13,6 +18,12 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
     />
     <title>Profile Page</title>
   </head>
@@ -50,15 +61,14 @@
               <li class="nav-item">
                 <a class="btn" id="logoutBtn">Logout</a>
               </li>
-              <!-- Icons for smaller screens -->
               <li class="nav-item d-lg-none">
                 <a class="nav-link" href="/profile/"
                   ><i class="fas fa-user"></i
                 ></a>
               </li>
               <li class="nav-item d-lg-none">
-                <a class="nav-link" href="/search/"
-                  ><i class="fa-solid fa-magnifying-glass"></i
+                <a class="nav-link" href="/likes/"
+                  ><i class="fa-regular fa-heart"></i
                 ></a>
               </li>
             </ul>
@@ -67,7 +77,7 @@
             <a href="/profile/" class="me-3"
               ><i class="fa-regular fa-user"></i
             ></a>
-            <a href="/likes/"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="/likes/"><i class="fa-regular fa-heart"></i></a>
           </div>
         </div>
       </nav>
@@ -79,16 +89,16 @@
         <div class="container">
           <div class="profile-container mt-2 mx-auto">
             <div class="col-md-4 text-center">
-              <img
-                id="profile-picture"
-                src="https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Profile Picture"
-                class="rounded-circle profile-picture"
-              />
-              <div>
-                <a href="/profile/editProfilePic.html" class=""
-                  >Edit<i class="fa-regular fa-pen-to-square edit-profile"></i
-                ></a>
+              <div class="profile-picture-container">
+                <img
+                  id="profile-picture"
+                  src="https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="Profile Picture"
+                  class="rounded-circle profile-picture"
+                />
+                <a href="/profile/editProfilePic.html" class="edit-icon">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </a>
               </div>
             </div>
             <div class="col-md-4">
@@ -105,13 +115,15 @@
                 </div>
               </div>
               <div class="social-media mt-3">
-                <a href="#" class="text-dark mr-2"
+                <a href="www.instagram.com" class="text-dark mr-2"
                   ><i class="fab fa-instagram"></i
                 ></a>
-                <a href="#" class="text-dark mr-2"
+                <a href="www.facebook.com" class="text-dark mr-2"
                   ><i class="fab fa-facebook"></i
                 ></a>
-                <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                <a href="www.twitter.com" class="text-dark"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -124,6 +136,7 @@
             <div class="loader"></div>
           </div>
         </div>
+        <hr class="custom-hr" />
       </main>
 
       <footer class="footer mt-auto py-3">
