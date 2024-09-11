@@ -1,4 +1,4 @@
-import { profileURL } from "../../constants/constants.mjs";
+import { listings_URL, profileURL } from "../../constants/constants.mjs";
 
 /**
  * Fetches all listings created by the specified user.

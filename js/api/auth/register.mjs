@@ -17,8 +17,6 @@ export async function register(userDetails) {
   const response = await fetch(registerURL, options);
   const json = await response.json();
 
-  console.log(response);
-
   if (response.ok) {
     return json;
   }
