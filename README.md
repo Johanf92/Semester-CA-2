@@ -68,7 +68,7 @@ The project must adhere to the following technical restrictions:
 - **Style Guide**: [Style Guide Link](https://xd.adobe.com/view/b60bd770-3319-4e28-ab77-eb19a4a6c1c2-e358/)
 - **Gantt Chart**: [Gantt Chart Link](https://github.com/users/Zarden92/projects/1/views/1)
 - **Kanban Project Board**: [Kanban Project Board Link](https://github.com/users/Zarden92/projects/1/views/5)
-- **Hosted Application Demo**: [Hosted Application Demo Link](https://famous-kelpie-f0673e.netlify.app/)
+- **Hosted Application Demo**: [Hosted Application Demo Link]([https://famous-kelpie-f0673e.netlify.app/](https://66e1a9d66c00020e22cc1632--majestic-alfajores-96ae00.netlify.app/))
 
 ## Setup and Run Locally
 
